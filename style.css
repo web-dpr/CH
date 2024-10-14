@@ -490,8 +490,8 @@
 }
 #news-3 img{
     top: 50px;
-    height: 600px;
-    width: 600px;
+    height: 610px;
+    width: 610px;
 }
 #section-8{
     position: relative;
@@ -594,7 +594,10 @@
     .footer img{
         display: none;
     }
-}
+    #news-3 img{
+        height: 550px;
+        width: 550px;
+    }
 @media (max-width: 1400px) {
     .containers{
         column-gap: 20px;

@@ -227,9 +227,9 @@
 #section-3{
     position: relative;
     width: 100%;
-    min-height: 800px;
-    height: calc(1300px - 30vw);
-    top: 180px;
+    min-height: 780px;
+    height: calc(1250px - 28vw);
+    top: 150px;
 }
 #contact-1{
     position: absolute;
@@ -497,7 +497,7 @@
     position: relative;
     width: 100%;
     min-height: 700px;
-    height: calc(1300px - 35vw);
+    height: calc(1250px - 30vw);
     top: 50px;
 }
 #section-9{
@@ -598,6 +598,7 @@
         height: 550px;
         width: 550px;
     }
+}
 @media (max-width: 1400px) {
     .containers{
         column-gap: 20px;
@@ -700,7 +701,7 @@
         height: calc(1000px - 30vw);
     }
     #section-3{
-        height: calc(1150px - 25vw)
+        height: calc(1100px - 25vw)
     }
     #section-4{
         height: calc(4550px - 180vw);
@@ -794,8 +795,8 @@
         width: 25vw;
     }
     #section-3{
-        min-height: 750px;
-        height: 750px;
+        min-height: 700px;
+        height: 700px;
     }
     #section-4{
         height: calc(3000px - 140vw);

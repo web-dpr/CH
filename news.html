@@ -144,7 +144,7 @@
             </div>
             <div id="news-3" class="news-items">
                 <button id="newsBtn-3" class="news-btns">Clay Target Shooting Day</button>
-                <h3 id="news-text-2">
+                <h3 id="news-text-3">
                     We’re excited to share the highlights from our recent Clay Target Shooting Day, 
                     an event that brought together our non-golfing clients for a day of networking and enjoyment. 
                     Held at The Valley Gun Club outside Paarl, the event was a perfect blend of sport and social 
@@ -152,7 +152,19 @@
                     relaxed and scenic setting. Thank you to everyone who joined us and made the day a resounding success. 
                     We look forward to many more opportunities to connect and celebrate with you in the future!
                 </h3>
-                <img id="news-img-2" src="images/ch-shooting-day.png">
+                <img id="news-img-3" src="images/ch-shooting-day.png">
+            </div>
+            <div id="news-4" class="news-items">
+                <button id="newsBtn-4" class="news-btns">Golf Day</button>
+                <h3 id="news-text-4">
+                    The 2024 Capital Harvest golf day was again held at the immaculate Stellenbosch Golf Club,
+                    where we entertained our clients and service providers. The day was filled with good golf,
+                    excellent food and many laughs and the networking gave us the opportunity to properly say
+                    thank you for yet another year’s support and business.  We are proud to be associated with
+                    each and every one and would like to express our gratitude to all for taking the time to
+                    attend. We hope to see you at the next one and to continue our partnership with you!
+                </h3>
+                <img id="news-img-4" src="images/ch-golf-day.png">
             </div>
         </div>
     </div>
@@ -190,17 +202,19 @@
 var clicked1 = false;
 var clicked2 = false;
 var clicked3 = false;
+var clicked4 = false;
 const div1 = document.getElementById(`news-1`);
 const div2 = document.getElementById(`news-2`);
 const div3 = document.getElementById(`news-3`);
+const div4 = document.getElementById(`news-4`);
 const targetSection = document.getElementById('section-7');
 
 window.addEventListener('resize', function() {
     var screenwidth = window.innerWidth;
-    if (clicked1 == false && clicked2 == false && clicked3 == false) {
+    if (clicked1 == false && clicked2 == false && clicked3 == false && clicked4 == false) {
         switch(true) {
             case (screenwidth < 768):
-                targetSection.style.height = '400px';
+                targetSection.style.height = '450px';
                 break;
             default:
                 targetSection.style.height = '550px';
@@ -217,7 +231,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
             const newsText = document.getElementById('news-text-1');
             const img = document.getElementById('news-img-1');
             if (event === 'extend') {
-                var values = [1330, 900, 950, 1030]
+                var values = [1425, 900, 950, 1030, 1110]
                 switch(true) {
                     case (screenwidth < 768):
                         values = values.map(value => value - 150);
@@ -227,6 +241,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                 }
                 div2.style.top = `${values[2]}px`;
                 div3.style.top = `${values[3]}px`;
+                div4.style.top = `${values[4]}px`;
                 targetSection.style.height = `${values[0]}px`;
                 div1.style.height = `${values[1]}px`;
                 newsText.style.display = 'block';
@@ -239,7 +254,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
             else if (event === 'retract') {
                 switch(true) {
                     case (screenwidth < 768):
-                        targetSection.style.height = '400px';
+                        targetSection.style.height = '450px';
                         break;
                     default:
                         targetSection.style.height = '550px';
@@ -247,6 +262,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                 }
                 div2.style.top = '80px';
                 div3.style.top = '160px';
+                div4.style.top = '240px';
                 div1.style.height = '50px'
                 newsText.style.opacity = 0;
                 img.style.opacity = 0;
@@ -258,7 +274,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
         function news_2(event) {
             const video = document.getElementById('news-video');
             if (event === 'extend') {
-                var values = [875, 475, 575];
+                var values = [950, 475, 575, 655];
                 switch(true) {
                     case (screenwidth < 900 && screenwidth > 768):
                         values = values.map(value => value - 80);
@@ -270,6 +286,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                         break;
                 }
                 div3.style.top = `${values[2]}px`;
+                div4.style.top = `${values[3]}px`;
                 div2.style.height = `${values[1]}px`;
                 targetSection.style.height = `${values[0]}px`;
                 video.style.display = 'block';
@@ -280,13 +297,14 @@ document.querySelectorAll('.news-btns').forEach(button => {
             else if (event === 'retract') {
                 switch(true) {
                     case (screenwidth < 768):
-                        targetSection.style.height = '400px';
+                        targetSection.style.height = '450px';
                         break;
                     default:
                         targetSection.style.height = '550px';
                         break;
                 }
                 div3.style.top = '160px';
+                div4.style.top = '240px';
                 div2.style.height = '50px';
                 video.style.display = 'none';
                 video.style.opacity = 0;
@@ -294,8 +312,54 @@ document.querySelectorAll('.news-btns').forEach(button => {
         }
         
         function news_3(event) {
-            const newsText = document.getElementById('news-text-2');
-            const img = document.getElementById('news-img-2');
+            const newsText = document.getElementById('news-text-3');
+            const img = document.getElementById('news-img-3');
+            if (event === 'extend') {
+                var values = [1650, 1225, 1350];
+                switch(true) {
+                    case (screenwidth > 900 && screenwidth < 1050):
+                        values = values.map(value => value - 50);
+                        break;
+                    case (screenwidth < 900 && screenwidth > 768):
+                        values = values.map(value => value - 150);
+                        break;
+                    case (screenwidth < 768):
+                        values = values.map(value => value - 300);
+                        break;
+                    default:
+                        break;
+                }
+                div3.style.height = `${values[1]}px`;
+                div4.style.top = `${values[2]}px`;
+                targetSection.style.height = `${values[0]}px`;
+                newsText.style.display = 'block';
+                img.style.display = 'block';
+                setTimeout(function() {
+                    newsText.style.opacity = 1;
+                    img.style.opacity = 1;
+                }, 10);
+            }
+            else if (event === 'retract') {
+                switch(true) {
+                    case (screenwidth < 768):
+                        targetSection.style.height = '450px';
+                        break;
+                    default:
+                        targetSection.style.height = '550px';
+                        break;
+                }
+                div3.style.height = '50px';
+                div4.style.top = '240px';
+                newsText.style.display = 'none';
+                img.style.display = 'none';
+                newsText.style.opacity = 0;
+                img.style.opacity = 0;
+            }
+        }
+
+        function news_4(event) {
+            const newsText = document.getElementById('news-text-4');
+            const img = document.getElementById('news-img-4');
             if (event === 'extend') {
                 var values = [1625, 1225];
                 switch(true) {
@@ -311,7 +375,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                     default:
                         break;
                 }
-                div3.style.height = `${values[1]}px`;
+                div4.style.height = `${values[1]}px`;
                 targetSection.style.height = `${values[0]}px`;
                 newsText.style.display = 'block';
                 img.style.display = 'block';
@@ -323,13 +387,13 @@ document.querySelectorAll('.news-btns').forEach(button => {
             else if (event === 'retract') {
                 switch(true) {
                     case (screenwidth < 768):
-                        targetSection.style.height = '400px';
+                        targetSection.style.height = '450px';
                         break;
                     default:
                         targetSection.style.height = '550px';
                         break;
                 }
-                div3.style.height = '50px';
+                div4.style.height = '50px';
                 newsText.style.display = 'none';
                 img.style.display = 'none';
                 newsText.style.opacity = 0;
@@ -343,8 +407,9 @@ document.querySelectorAll('.news-btns').forEach(button => {
             if (clicked1 === false) {
                 news_2('retract');
                 news_3('retract');
+                news_4('retract');
                 news_1('extend');
-                clicked1 = true; clicked2 = false; clicked3 = false;
+                clicked1 = true; clicked2 = false; clicked3 = false; clicked4 = false;
             }
             else {
                 news_1('retract');
@@ -355,8 +420,9 @@ document.querySelectorAll('.news-btns').forEach(button => {
             if (clicked2 === false) {
                 news_1('retract');
                 news_3('retract');
+                news_4('retract');
                 news_2('extend');
-                clicked2 = true; clicked1 = false; clicked3 = false;
+                clicked2 = true; clicked1 = false; clicked3 = false; clicked4 = false;
             }
             else{
                 news_2('retract');
@@ -367,12 +433,26 @@ document.querySelectorAll('.news-btns').forEach(button => {
             if (clicked3 === false) {
                 news_1('retract');
                 news_2('retract');
+                news_4('retract');
                 news_3('extend');
-                clicked3 = true; clicked1 = false; clicked2 = false;
+                clicked3 = true; clicked1 = false; clicked2 = false; clicked4 = false;
             }
             else{
                 news_3('retract');
                 clicked3 = false;
+            }
+        }
+        if (number === '4') {
+            if (clicked4 === false) {
+                news_1('retract');
+                news_2('retract');
+                news_3('retract');
+                news_4('extend');
+                clicked4 = true; clicked1 = false; clicked2 = false; clicked3 = false;
+            }
+            else{
+                news_4('retract');
+                clicked4 = false;
             }
         }
     });

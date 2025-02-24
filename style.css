@@ -342,45 +342,65 @@
 }
 #section-6{
     top: 50px;
-    height: 5400px;
+    height: 6800px;
     display: flex;
     justify-content: center;
 }
-#heading-1, #heading-2, #heading-3, .content-container h2{
+#heading-1, #heading-3, .headings, .content-container h2{
     position: absolute;
     font-family: monsterrat;
     font-weight: normal;
     color: #4659af;
 }
+.headings{
+    position: relative;
+    grid-column: 1 / 4;  /* Span across all three columns */
+    text-align: center;
+    font-style: italic;
+}
 #heading-1{
     top: 30px;
     font-size: 48px;
 }
-#heading-2{
-    font-size: 26px;
-    top: 200px;
-}
 #heading-3{
-    font-size: 26px;
-    top: 1700px;
+    font-size: 48px;
+    top: 1530px;
+}
+.directors-containers{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Create 3 equal columns */
+    grid-template-rows: 100px 600px 700px;      /* Create 2 rows, one for the top and one for the bottom */
+    column-gap: 50px;                          /* Optional: spacing between items */
+    justify-items: center;              /* Centers items horizontally within their grid area */
+}
+.staff-containers-1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Create 3 equal columns */
+    grid-template-rows: 100px 700px;      /* Create 2 rows, one for the top and one for the bottom */
+    column-gap: 50px;                          /* Optional: spacing between items */
+    justify-items: center;             
+    /* align-items: center; */
+}
+.staff-containers-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /* Create 3 equal columns */
+    grid-template-rows: 100px 600px 700px;      /* Create 2 rows, one for the top and one for the bottom */
+    column-gap: 50px;                          /* Optional: spacing between items */
+    justify-items: center;             /* Centers items horizontally within their grid area */
 }
 .containers{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 100px;
+    position: absolute;
 }
 .containers img{
     height: 400px;
+    /* width: 333.33px;
+    object-fit: cover; */
     border-radius: 20px;
-}
-#container-1{
-    position: absolute;
-    top: 320px;
-    height: 1200px;
 }
 .content-container{
     height: 450px;
     width: 335px;
+    grid-column: span 1;
 }
 .content-container h2{
     font-size: 24px;
@@ -400,10 +420,13 @@
     color: #000000;
     font-size: 16px;
 }
+#container-1{
+    top: 180px;
+    height: 1200px;
+}
 #container-2{
-    position: absolute;
-    top: 1820px;
-    height: 3600px;
+    top: 1700px;
+    height: 5100px;
 }
 #section-7, #section-10{
     top: 50px;
@@ -634,20 +657,22 @@
     #text-box-2{
         top: 60px;
     }
-    .containers{
+    .staff-containers-1{
+        grid-template-rows: 80px 500px;
+        column-gap: 40px;
+    }
+    .directors-containers, .staff-containers-2{
+        grid-template-rows: 80px 450px 500px;
         column-gap: 40px;
     }
     .containers img{
         height: 300px;
     }
-    #container-1{
-        height: 1000px;
-    }
     .content-container{
         width: 250px;
     }
     #section-6{
-        height: 4500px;
+        height: 5400px;
     }
     .content-container h2{
         font-size: 20px;
@@ -661,11 +686,14 @@
         font-size: 14px;
     }
     #heading-3{
-        top: 1400px;
+        top: 1300px;
+    }
+    #container-1{
+        height: auto;
+        top: 180px;
     }
     #container-2{
-        top: 1520px;
-        height: 3000px;
+        top: 1450px;
     }
     .footer button{
         font-size: 18px;
@@ -743,26 +771,35 @@
         font-size: 38px;
     }
     #heading-3{
-        top: 1320px;
+        top: 1250px;
     }
-    #heading-2, #heading-3{
+    .headings, #heading-3{
         font-size: 22px;
     }
     .containers img{
         height: 250px;
     }
-    .content-container{
-        width: 210px;
+    .directors-containers{
+        grid-template-rows: 80px 450px 450px;
+        column-gap: 10px;
+    }
+    .staff-containers-1{
+        grid-template-rows: 80px 450px;
+        column-gap: 10px;
+    }
+    .staff-containers-2{
+        grid-template-rows: 80px 400px 450px;
+        column-gap: 10px;
     }
     #container-1{
         height: 950px;
     }
     #container-2{
-        top: 1450px;
+        top: 1350px;
         height: 2800px;
     }
     #section-6{
-        height: 4250px;
+        height: 4800px;
     }
     .footer button{
         font-size: 16px;
@@ -816,7 +853,7 @@
         height: calc(2950px - 140vw);
     }
     #section-6{
-        height: 3950px;
+        height: 4300px;
     }
     #section-5{
         height: calc(3050px - 140vw);
@@ -852,8 +889,17 @@
         bottom: 25px;
         right: 25px;
     }
-    .containers{
-        column-gap: 30px;
+    .directors-containers{
+        grid-template-rows: 80px 400px 400px;
+        column-gap: 20px;
+    }
+    .staff-containers-1{
+        grid-template-rows: 80px 400px;
+        column-gap: 20px;
+    }
+    .staff-containers-2{
+        grid-template-rows: 80px 350px 400px;
+        column-gap: 20px;
     }
     .containers img{
         height: 220px;
@@ -875,11 +921,11 @@
         height: 850px;
     }
     #container-2{
-        top: 1380px;
+        top: 1200px;
         height: 2600px;
     }
     #heading-3{
-        top: 1250px;
+        top: 1100px;
     }
 }
 @media (max-width: 768px) {
@@ -898,7 +944,7 @@
     .text-boxes h1, #heading-1{
         font-size: 28px;
     }
-    #heading-2, #heading-3{
+    .headings, #heading-3{
         font-size: 18px;
     }
     .text-boxes h3{
@@ -928,7 +974,7 @@
         min-height: 1300px;
     }
     #section-6{
-        height: 3200px;
+        height: 3900px;
     }
     #section-7{
         height: 450px;
@@ -990,7 +1036,16 @@
         width: 90%;
         font-size: 13px;
     }
-    .containers{
+    .directors-containers{
+        grid-template-rows: 80px 350px 400px;
+        column-gap: 20px;
+    }
+    .staff-containers-1{
+        grid-template-rows: 80px 350px;
+        column-gap: 20px;
+    }
+    .staff-containers-2{
+        grid-template-rows: 80px 320px 350px;
         column-gap: 20px;
     }
     .containers img{
@@ -1009,14 +1064,11 @@
     .content-container h4{
         font-size: 11px;
     }
-    #heading-2{
-        top: 150px;
-    }
     #heading-3{
-        top: 1000px;
+        top: 1020px;
     }
     #container-1{
-        top: 240px;
+        top: 150px;
         height: 700px;
     }
     #container-2{

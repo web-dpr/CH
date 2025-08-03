@@ -131,20 +131,8 @@
                 <img id="news-img-1" src="images/CH-award.jpg">
             </div>
             <div id="news-2" class="news-items">
-                <button id="newsbtn-2" class="news-btns">New Development Finance</button>
-                <iframe
-                    id="news-video" 
-                    src="https://www.youtube.com/embed/2XLmzmPdIH0?si=FCXbwWMY5VU8xFdZ" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div id="news-3" class="news-items">
-                <button id="newsBtn-3" class="news-btns">Clay Target Shooting Day</button>
-                <h3 id="news-text-3">
+                <button id="newsBtn-2" class="news-btns">Clay Target Shooting Day</button>
+                <h3 id="news-text-2">
                     We’re excited to share the highlights from our recent Clay Target Shooting Day, 
                     an event that brought together our non-golfing clients for a day of networking and enjoyment. 
                     Held at The Valley Gun Club outside Paarl, the event was a perfect blend of sport and social 
@@ -152,19 +140,37 @@
                     relaxed and scenic setting. Thank you to everyone who joined us and made the day a resounding success. 
                     We look forward to many more opportunities to connect and celebrate with you in the future!
                 </h3>
-                <img id="news-img-3" src="images/ch-shooting-day.png">
+                <img id="news-img-2" src="images/ch-shooting-day.png">
             </div>
-            <div id="news-4" class="news-items">
-                <button id="newsBtn-4" class="news-btns">Golf Day</button>
-                <h3 id="news-text-4">
+            <div id="news-3" class="news-items">
+                <button id="newsBtn-3" class="news-btns">Golf Day</button>
+                <h3 id="news-text-3">
                     The 2024 Capital Harvest golf day was again held at the immaculate Stellenbosch Golf Club,
                     where we entertained our clients and service providers. The day was filled with good golf,
                     excellent food and many laughs and the networking gave us the opportunity to properly say
-                    thank you for yet another year’s support and business.  We are proud to be associated with
+                    thank you for yet another year’s support and business. We are proud to be associated with
                     each and every one and would like to express our gratitude to all for taking the time to
                     attend. We hope to see you at the next one and to continue our partnership with you!
                 </h3>
-                <img id="news-img-4" src="images/ch-golf-day.png">
+                <img id="news-img-3" src="images/ch-golf-day.png">
+            </div>
+            <div id="news-4" class="news-items">
+                <button id="newsBtn-4" class="news-btns">Results Presentations</button>
+                <h3 id="news-text-4">
+                    On 30 July 2025, Capital Harvest held its annual results presentation for its two finance
+                    structures, Capital Harvest Warehouse SPV (RF) (Pty) Ltd and Capital Harvest Finance (RF)
+                    Limited. We were excited to have the biggest turnout to date with representatives from all
+                    our funders attending the presentation. <br><br>
+                    As we have always done in the past, we combined the results presentation with a visit to one
+                    of our clients. This year we were privileged to be hosted by Faircape, who shared the story
+                    of their amazing journey from humble beginnings of only milking a few cows a day to the
+                    industry leading diary supplier that Faircape is today.<br><br>
+                    We concluded the day with a lunch at Klein Roosboom Boutique Winery where we got to
+                    know each other better over some good food and fine wine. Thank you to all our funders,
+                    not only for attending the day, but for your continued support in our pursuit of becoming the
+                    agriculture financier of choice in South Africa!
+                </h3>
+                <img id="news-img-4" src="images/ch-results-presentation.png">
             </div>
         </div>
     </div>
@@ -243,7 +249,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                 div3.style.top = `${values[3]}px`;
                 div4.style.top = `${values[4]}px`;
                 targetSection.style.height = `${values[0]}px`;
-                div1.style.height = `${values[1]}px`;
+                // div1.style.height = `${values[1]}px`;
                 newsText.style.display = 'block';
                 img.style.display = 'block';
                 setTimeout(function() {
@@ -263,7 +269,7 @@ document.querySelectorAll('.news-btns').forEach(button => {
                 div2.style.top = '80px';
                 div3.style.top = '160px';
                 div4.style.top = '240px';
-                div1.style.height = '50px'
+                // div1.style.height = '50px'
                 newsText.style.opacity = 0;
                 img.style.opacity = 0;
                 newsText.style.display = 'none';
@@ -272,50 +278,10 @@ document.querySelectorAll('.news-btns').forEach(button => {
         }
         
         function news_2(event) {
-            const video = document.getElementById('news-video');
+            const newsText = document.getElementById('news-text-2');
+            const img = document.getElementById('news-img-2');
             if (event === 'extend') {
-                var values = [950, 475, 575, 655];
-                switch(true) {
-                    case (screenwidth < 900 && screenwidth > 768):
-                        values = values.map(value => value - 80);
-                        break;
-                    case (screenwidth < 768):
-                        values = values.map(value => value - 120);
-                        break;
-                    default:
-                        break;
-                }
-                div3.style.top = `${values[2]}px`;
-                div4.style.top = `${values[3]}px`;
-                div2.style.height = `${values[1]}px`;
-                targetSection.style.height = `${values[0]}px`;
-                video.style.display = 'block';
-                setTimeout(function() {
-                    video.style.opacity = 1;
-                }, 10);
-            }
-            else if (event === 'retract') {
-                switch(true) {
-                    case (screenwidth < 768):
-                        targetSection.style.height = '450px';
-                        break;
-                    default:
-                        targetSection.style.height = '550px';
-                        break;
-                }
-                div3.style.top = '160px';
-                div4.style.top = '240px';
-                div2.style.height = '50px';
-                video.style.display = 'none';
-                video.style.opacity = 0;
-            }
-        }
-        
-        function news_3(event) {
-            const newsText = document.getElementById('news-text-3');
-            const img = document.getElementById('news-img-3');
-            if (event === 'extend') {
-                var values = [1650, 1225, 1350];
+                var values = [1150, 1230, 1550];
                 switch(true) {
                     case (screenwidth > 900 && screenwidth < 1050):
                         values = values.map(value => value - 50);
@@ -323,15 +289,19 @@ document.querySelectorAll('.news-btns').forEach(button => {
                     case (screenwidth < 900 && screenwidth > 768):
                         values = values.map(value => value - 150);
                         break;
-                    case (screenwidth < 768):
+                    case (screenwidth < 768 && screenwidth > 520):
                         values = values.map(value => value - 300);
+                        break;
+                    case (screenwidth < 768):
+                        values = values.map(value => value - 260);
                         break;
                     default:
                         break;
                 }
-                div3.style.height = `${values[1]}px`;
-                div4.style.top = `${values[2]}px`;
-                targetSection.style.height = `${values[0]}px`;
+                // div2.style.height = `${values[1]}px`;
+                div3.style.top = `${values[0]}px`;
+                div4.style.top = `${values[1]}px`;
+                targetSection.style.height = `${values[2]}px`;
                 newsText.style.display = 'block';
                 img.style.display = 'block';
                 setTimeout(function() {
@@ -348,7 +318,8 @@ document.querySelectorAll('.news-btns').forEach(button => {
                         targetSection.style.height = '550px';
                         break;
                 }
-                div3.style.height = '50px';
+                // div3.style.height = '50px';
+                div3.style.top = '160px';
                 div4.style.top = '240px';
                 newsText.style.display = 'none';
                 img.style.display = 'none';
@@ -357,25 +328,25 @@ document.querySelectorAll('.news-btns').forEach(button => {
             }
         }
 
-        function news_4(event) {
-            const newsText = document.getElementById('news-text-4');
-            const img = document.getElementById('news-img-4');
+        function news_3(event) {
+            const newsText = document.getElementById('news-text-3');
+            const img = document.getElementById('news-img-3');
             if (event === 'extend') {
-                var values = [1650, 1225];
+                var values = [1550, 1250];
                 switch(true) {
-                    case (screenwidth > 900 && screenwidth < 1050):
-                        values = values.map(value => value - 80);
-                        break;
+                    // case (screenwidth > 900 && screenwidth < 1050):
+                    //     values = values.map(value => value - 80);
+                    //     break;
                     case (screenwidth < 900 && screenwidth > 768):
                         values = values.map(value => value - 200);
                         break;
                     case (screenwidth < 768):
-                        values = values.map(value => value - 400);
+                        values = values.map(value => value - 300);
                         break;
                     default:
                         break;
                 }
-                div4.style.height = `${values[1]}px`;
+                div4.style.top = `${values[1]}px`;
                 targetSection.style.height = `${values[0]}px`;
                 newsText.style.display = 'block';
                 img.style.display = 'block';
@@ -393,7 +364,49 @@ document.querySelectorAll('.news-btns').forEach(button => {
                         targetSection.style.height = '550px';
                         break;
                 }
-                div4.style.height = '50px';
+                div4.style.top = '240px';
+                newsText.style.display = 'none';
+                img.style.display = 'none';
+                newsText.style.opacity = 0;
+                img.style.opacity = 0;
+            }
+        }
+
+               function news_4(event) {
+            const newsText = document.getElementById('news-text-4');
+            const img = document.getElementById('news-img-4');
+            if (event === 'extend') {
+                var values = [2250];
+                switch(true) {
+                    // case (screenwidth > 900 && screenwidth < 1050):
+                    //     values = values.map(value => value - 50);
+                        // break;
+                    case (screenwidth < 900 && screenwidth > 768):
+                        values = values.map(value => value - 150);
+                        break;
+                    case (screenwidth < 768):
+                        values = values.map(value => value - 600);
+                        break;
+                    default:
+                        break;
+                }
+                targetSection.style.height = `${values[0]}px`;
+                newsText.style.display = 'block';
+                img.style.display = 'block';
+                setTimeout(function() {
+                    newsText.style.opacity = 1;
+                    img.style.opacity = 1;
+                }, 10);
+            }
+            else if (event === 'retract') {
+                switch(true) {
+                    case (screenwidth < 768):
+                        targetSection.style.height = '450px';
+                        break;
+                    default:
+                        targetSection.style.height = '550px';
+                        break;
+                }
                 newsText.style.display = 'none';
                 img.style.display = 'none';
                 newsText.style.opacity = 0;

@@ -393,8 +393,8 @@
 }
 .containers img{
     height: 400px;
-    /* width: 333.33px;
-    object-fit: cover; */
+    width: 333.33px;
+    object-fit: cover;
     border-radius: 20px;
 }
 .content-container{
